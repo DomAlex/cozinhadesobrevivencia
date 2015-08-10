@@ -16,6 +16,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SobreOApp"
+            android:label="@string/title_activity_sobre_oapp" >
+        </activity>
+        <activity
+            android:name=".ReceitasSalgadas"
+            android:label="@string/title_activity_receitas_salgadas" >
+        </activity>
+        <activity
+            android:name=".ReceitasDoces"
+            android:label="@string/title_activity_receitas_doces" >
+        </activity>
+        <activity
+            android:name=".Aperitivos"
+            android:label="@string/title_activity_aperitivos" >
+        </activity>
+        <activity
+            android:name=".Molhos"
+            android:label="@string/title_activity_molhos" >
+        </activity>
     </application>
 
 </manifest>
