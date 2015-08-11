@@ -19,6 +19,15 @@
         <activity
             android:name=".ReceitasSalgadas"
             android:label="@string/title_activity_receitas_salgadas" >
+        </activity>
+        <activity
+            android:name=".ReceitasDoces"
+            android:label="@string/title_activity_receitas_doces" >
+
+        </activity>
+        <activity
+            android:name=".Aperitivos"
+            android:label="@string/title_activity_aperitivos" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,16 +35,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ReceitasDoces"
-            android:label="@string/title_activity_receitas_doces" >
-        </activity>
-        <activity
-            android:name=".Aperitivos"
-            android:label="@string/title_activity_aperitivos" >
-        </activity>
-        <activity
             android:name=".Molhos"
             android:label="@string/title_activity_molhos" >
+
         </activity>
     </application>
 

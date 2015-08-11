@@ -16,6 +16,10 @@ public class Molhos extends AppCompatActivity {
         ListView listaDeMolhosEPastas;
         String[] receitasDeMolhos = {"Molho Branco","Molho de Tomate", "Pasta de cebola", "Molho Americano","Pasta de Galinha","Pasta de Atum","Pasta de Presunto"};
         ArrayAdapter<String> adapter;
+
+        adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,receitasDeMolhos);
+        listaDeMolhosEPastas = (ListView)findViewById(R.id.listViewMolhosEpastas);
+        listaDeMolhosEPastas.setAdapter(adapter);
     }
 
     @Override

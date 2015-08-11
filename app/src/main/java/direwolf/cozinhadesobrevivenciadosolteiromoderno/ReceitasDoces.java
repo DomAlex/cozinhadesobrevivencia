@@ -15,8 +15,13 @@ public class ReceitasDoces extends AppCompatActivity {
         setContentView(R.layout.activity_receitas_doces);
 
         ListView listaDeReceitasDoces;
-        String[] receitasDoces = {"Bolod e Caneca", "Bolo de Leite","Mousse de Maracujá","Queijadinha","Torta de Coco"};
+        String[] receitasDoces = {"Bolo de Caneca", "Bolo de Leite","Mousse de Maracujá","Queijadinha","Torta de Coco"};
         ArrayAdapter<String> adapter;
+
+        listaDeReceitasDoces = (ListView)findViewById(R.id.listViewReceitasDoces);
+
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,receitasDoces);
+        listaDeReceitasDoces.setAdapter(adapter);
     }
 
     @Override

@@ -17,6 +17,10 @@ public class Aperitivos extends AppCompatActivity {
         ListView listaDeAperitivos;
         String[] receitasDeAperitivos = {"Paçoca Caseira","Queijo de pipoqueiro","Rolinho empanado de frios"};
         ArrayAdapter<String> adapter;
+
+        adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,receitasDeAperitivos);
+        listaDeAperitivos = (ListView)findViewById(R.id.listViewAperitivos);
+        listaDeAperitivos.setAdapter(adapter);
     }
 
     @Override
