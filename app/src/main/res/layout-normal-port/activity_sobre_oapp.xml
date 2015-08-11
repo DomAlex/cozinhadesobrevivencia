@@ -1,10 +1,13 @@
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="direwolf.cozinhadesobrevivenciadosolteiromoderno.SobreOApp">
-
+    tools:context="direwolf.cozinhadesobrevivenciadosolteiromoderno.SobreOApp"
+    android:id="@+id/drawerLayoutActivitySobre">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -105,3 +108,9 @@
         android:text="Obrigado por usar este aplicativo!  :)"/>
     </RelativeLayout>
 </ScrollView>
+
+    <ListView
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:id="@+id/navListActivitySobre"></ListView>
+</android.support.v4.widget.DrawerLayout>
