@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 public class Molhos extends AppCompatActivity {
 
@@ -11,6 +13,9 @@ public class Molhos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_molhos);
+        ListView listaDeMolhosEPastas;
+        String[] receitasDeMolhos = {"Molho Branco","Molho de Tomate", "Pasta de cebola", "Molho Americano","Pasta de Galinha","Pasta de Atum","Pasta de Presunto"};
+        ArrayAdapter<String> adapter;
     }
 
     @Override

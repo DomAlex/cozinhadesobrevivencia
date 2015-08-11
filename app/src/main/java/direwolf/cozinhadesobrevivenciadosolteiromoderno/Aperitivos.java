@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 public class Aperitivos extends AppCompatActivity {
 
@@ -11,6 +13,10 @@ public class Aperitivos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aperitivos);
+
+        ListView listaDeAperitivos;
+        String[] receitasDeAperitivos = {"Paçoca Caseira","Queijo de pipoqueiro","Rolinho empanado de frios"};
+        ArrayAdapter<String> adapter;
     }
 
     @Override

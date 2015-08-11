@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 public class ReceitasDoces extends AppCompatActivity {
 
@@ -11,6 +13,10 @@ public class ReceitasDoces extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_receitas_doces);
+
+        ListView listaDeReceitasDoces;
+        String[] receitasDoces = {"Bolod e Caneca", "Bolo de Leite","Mousse de Maracujá","Queijadinha","Torta de Coco"};
+        ArrayAdapter<String> adapter;
     }
 
     @Override

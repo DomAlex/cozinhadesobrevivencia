@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 public class ReceitasSalgadas extends AppCompatActivity {
 
@@ -11,6 +13,16 @@ public class ReceitasSalgadas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_receitas_salgadas);
+        String[] receitasSalgadas = {"Bolo de Pão de Queijo", "Sopa Paraguaia", "Torta de Palmito", "Torta de Pizza"};
+
+        ListView listaDeReceitasSalgadas;
+        ArrayAdapter<String> adapter;
+
+
+        listaDeReceitasSalgadas = (ListView)findViewById(R.id.listViewReceitasSalgadas);
+        adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,receitasSalgadas);
+        listaDeReceitasSalgadas.setAdapter(adapter);
+
     }
 
     @Override

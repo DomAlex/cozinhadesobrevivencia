@@ -11,6 +11,8 @@ public class SobreOApp extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sobre_oapp);
+
+
     }
 
     @Override
