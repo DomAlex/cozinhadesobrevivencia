@@ -1,6 +1,7 @@
 package direwolf.cozinhadesobrevivenciadosolteiromoderno;
 
 import android.app.Activity;
+import android.content.res.Configuration;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -8,6 +9,7 @@ import android.support.v4.app.FragmentManager;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -16,18 +18,94 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
 
+    private ActionBarDrawerToggle actionBarDrawerToggle;
+    private DrawerLayout drawerLayout;
+    private ArrayAdapter<String> adapter;
+    private ListView drawerList;
+    private String tituloDaActivity;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayoutActivityMain);
+        drawerList = (ListView) findViewById(R.id.navListActivityMain);
+        tituloDaActivity = getTitle().toString();
+
+
+        addDrawerItems();
+        setUpDrawer();
+
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        TextView xablau = (TextView)findViewById(R.id.xablau);
+
+
+    }
+
+
+    protected void addDrawerItems() {
+        String[] itemsDoNavigationDrawer = {"Inicio", "Receitas Salgadas", "Receitas Doces", "Aperitivos", "Molhos", "Sobre o app"};
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, itemsDoNavigationDrawer);
+        drawerList.setAdapter(adapter);
+        drawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getApplicationContext(), "Xablau!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
+    private void setUpDrawer() {
+        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open_drawer, R.string.close_drawer) {
+
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+                getSupportActionBar().setTitle("Navegação");
+                invalidateOptionsMenu();
+
+            }
+
+            public void onDrawerClosed(View view) {
+                super.onDrawerClosed(view);
+                getSupportActionBar().setTitle(tituloDaActivity);
+                invalidateOptionsMenu();
+            }
+
+        };
+
+        actionBarDrawerToggle.setDrawerIndicatorEnabled(true);
+        drawerLayout.setDrawerListener(actionBarDrawerToggle);
+
+    }
+
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+
+        actionBarDrawerToggle.syncState();
+
+    }
+
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        actionBarDrawerToggle.onConfigurationChanged(newConfig);
 
     }
 
@@ -48,6 +126,10 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            return true;
+        }
+
+        if(actionBarDrawerToggle.onOptionsItemSelected(item)){
             return true;
         }
 
