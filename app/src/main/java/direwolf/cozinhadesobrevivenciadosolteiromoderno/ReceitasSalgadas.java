@@ -1,18 +1,42 @@
 package direwolf.cozinhadesobrevivenciadosolteiromoderno;
 
+import android.content.res.Configuration;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class ReceitasSalgadas extends AppCompatActivity {
-
+    private ActionBarDrawerToggle actionBarDrawerToggle;
+    private DrawerLayout drawerLayout;
+    private ArrayAdapter<String> adapter;
+    private ListView drawerList;
+    private String tituloDaActivity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_receitas_salgadas);
+
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayoutActivityReceitasSalgadas);
+        drawerList = (ListView) findViewById(R.id.navListActivityReceitasSalgadas);
+        tituloDaActivity = getTitle().toString();
+
+
+        addDrawerItems();
+        setUpDrawer();
+
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+
         String[] receitasSalgadas = {"Bolo de Pão de Queijo", "Sopa Paraguaia", "Torta de Palmito", "Torta de Pizza"};
 
         ListView listaDeReceitasSalgadas;
@@ -22,6 +46,58 @@ public class ReceitasSalgadas extends AppCompatActivity {
         listaDeReceitasSalgadas = (ListView)findViewById(R.id.listViewReceitasSalgadas);
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,receitasSalgadas);
         listaDeReceitasSalgadas.setAdapter(adapter);
+
+    }
+
+    protected void addDrawerItems() {
+        String[] itemsDoNavigationDrawer = {"Inicio", "Receitas Salgadas", "Receitas Doces", "Aperitivos", "Molhos", "Sobre o app"};
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, itemsDoNavigationDrawer);
+        drawerList.setAdapter(adapter);
+        drawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getApplicationContext(), "Xablau!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
+    private void setUpDrawer() {
+        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open_drawer, R.string.close_drawer) {
+
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+                getSupportActionBar().setTitle("Navegação");
+                invalidateOptionsMenu();
+
+            }
+
+            public void onDrawerClosed(View view) {
+                super.onDrawerClosed(view);
+                getSupportActionBar().setTitle(tituloDaActivity);
+                invalidateOptionsMenu();
+            }
+
+        };
+
+        actionBarDrawerToggle.setDrawerIndicatorEnabled(true);
+        drawerLayout.setDrawerListener(actionBarDrawerToggle);
+
+    }
+
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+
+        actionBarDrawerToggle.syncState();
+
+    }
+
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        actionBarDrawerToggle.onConfigurationChanged(newConfig);
 
     }
 
@@ -41,6 +117,10 @@ public class ReceitasSalgadas extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            return true;
+        }
+
+        if(actionBarDrawerToggle.onOptionsItemSelected(item)){
             return true;
         }
 
