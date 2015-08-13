@@ -24,7 +24,11 @@
         <activity
             android:name=".ReceitasDoces"
             android:label="@string/title_activity_receitas_doces" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".Aperitivos"
@@ -33,11 +37,6 @@
         <activity
             android:name=".Molhos"
             android:label="@string/title_activity_molhos" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
