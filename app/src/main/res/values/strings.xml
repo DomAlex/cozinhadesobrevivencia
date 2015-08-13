@@ -11,11 +11,13 @@
     <string name="action_example">Example action</string>
 
     <string name="action_settings">Settings</string>
-    <string name="title_activity_sobre_oapp">SobreOApp</string>
+    <string name="title_activity_sobre_oapp">Sobre o app</string>
 
-    <string name="hello_world">Hello world!</string>
-    <string name="title_activity_receitas_salgadas">ReceitasSalgadas</string>
-    <string name="title_activity_receitas_doces">ReceitasDoces</string>
+
+    <string name="title_activity_receitas_salgadas">Receitas Salgadas</string>
+    <string name="title_activity_receitas_doces">Receitas Doces</string>
     <string name="title_activity_aperitivos">Aperitivos</string>
     <string name="title_activity_molhos">Molhos</string>
+    <string name="open_drawer">Navegação aberta</string>
+    <string name="close_drawer">Navegação fechada</string>
 </resources>

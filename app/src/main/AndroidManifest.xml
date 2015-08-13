@@ -14,7 +14,7 @@
         </activity>
         <activity
             android:name=".SobreOApp"
-            android:label="@string/title_activity_sobre_oapp" >
+            android:label= "@string/title_activity_sobre_oapp" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

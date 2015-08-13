@@ -1,5 +1,6 @@
 package direwolf.cozinhadesobrevivenciadosolteiromoderno;
 
+import android.content.res.Configuration;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,7 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class SobreOApp extends AppCompatActivity{
+public class SobreOApp extends AppCompatActivity {
 
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private DrawerLayout drawerLayout;
@@ -24,32 +25,71 @@ public class SobreOApp extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sobre_oapp);
-        drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
-        drawerList = (ListView)findViewById(R.id.navListActivitySobre);
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayoutActivitySobre);
+        drawerList = (ListView) findViewById(R.id.navListActivitySobre);
         tituloDaActivity = getTitle().toString();
 
 
+        addDrawerItems();
+        setUpDrawer();
 
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
 
-    protected void addDrawerItems(){
-        String[] itemsDoNavigationDrawer = {"Inicio","Receitas Salgadas","Receitas Doces","Aperitivos","Molhos","Sobre o app"};
-        adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,itemsDoNavigationDrawer);
+    protected void addDrawerItems() {
+        String[] itemsDoNavigationDrawer = {"Inicio", "Receitas Salgadas", "Receitas Doces", "Aperitivos", "Molhos", "Sobre o app"};
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, itemsDoNavigationDrawer);
         drawerList.setAdapter(adapter);
         drawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(),"Xablau!",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Xablau!", Toast.LENGTH_SHORT).show();
             }
         });
 
     }
 
-    protected  void aetUpDrawer(){
+    private void setUpDrawer() {
+        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open_drawer, R.string.close_drawer) {
 
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+                getSupportActionBar().setTitle("Navegação");
+                invalidateOptionsMenu();
+
+            }
+
+            public void onDrawerClosed(View view) {
+                super.onDrawerClosed(view);
+                getSupportActionBar().setTitle(tituloDaActivity);
+                invalidateOptionsMenu();
+            }
+
+        };
+
+        actionBarDrawerToggle.setDrawerIndicatorEnabled(true);
+        drawerLayout.setDrawerListener(actionBarDrawerToggle);
 
     }
+
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+
+        actionBarDrawerToggle.syncState();
+
+    }
+
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        actionBarDrawerToggle.onConfigurationChanged(newConfig);
+
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -67,6 +107,10 @@ public class SobreOApp extends AppCompatActivity{
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            return true;
+        }
+
+        if(actionBarDrawerToggle.onOptionsItemSelected(item)){
             return true;
         }
 

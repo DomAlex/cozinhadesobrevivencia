@@ -1,106 +1,123 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="direwolf.cozinhadesobrevivenciadosolteiromoderno.SobreOApp"
-    >
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView android:text="Cozinha de Sobrevivência do Solteiro Moderno"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="25sp"
-        android:gravity="center"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
-        android:id="@+id/textViewTituloAppTelaSobre"/>
+    tools:context="direwolf.cozinhadesobrevivenciadosolteiromoderno.SobreOApp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:text="Versão 1.0"
-        android:gravity="center"
-        android:id="@+id/textViewNumeroDaVersaoTelaSobre"
-        android:layout_below="@+id/textViewTituloAppTelaSobre"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textViewCodinomeTelaSobre"
-        android:text="Codinome: Xablau !!"
-        android:textSize="16sp"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/textViewNumeroDaVersaoTelaSobre"
-        android:layout_centerHorizontal="true" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textViewTituloAppTelaSobre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="Cozinha de Sobrevivência do Solteiro Moderno"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textViewNumeroDaVersaoTelaSobre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textViewTituloAppTelaSobre"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:text="Versão 1.0"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/textViewCodinomeTelaSobre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textViewNumeroDaVersaoTelaSobre"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="Codinome: Xablau !!"
+                android:textSize="16sp" />
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/desenvolvedorDoAplicativo"
-        android:textSize="16sp"
-        android:gravity="center"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:layout_below="@id/textViewCodinomeTelaSobre"
-        android:text="Aplicativo desenvolvido por:"/>
+            <TextView
+                android:id="@+id/desenvolvedorDoAplicativo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewCodinomeTelaSobre"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="40dp"
+                android:gravity="center"
+                android:text="Aplicativo desenvolvido por:"
+                android:textSize="16sp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="25sp"
-        android:id="@+id/nomeDoDesenvolvedor"
-        android:gravity="center"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:layout_below="@id/desenvolvedorDoAplicativo"
-        android:text="Alex Araujo de Paula"/>
+            <TextView
+                android:id="@+id/nomeDoDesenvolvedor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/desenvolvedorDoAplicativo"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Alex Araujo de Paula"
+                android:textSize="25sp" />
 
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="10dp"
-        android:id="@+id/imagemDoDesenvolvedor"
-        android:layout_below="@id/nomeDoDesenvolvedor"
-        android:layout_centerHorizontal="true"
-        android:background="#abeafe"/>
+            <ImageView
+                android:id="@+id/imagemDoDesenvolvedor"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_below="@id/nomeDoDesenvolvedor"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:background="#abeafe" />
 
-    <TextView
-        android:id="@+id/emailDoDesenvolvedor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="22sp"
-        android:text="E-mail: contato@araujodeveloper.com.br"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:layout_below="@id/imagemDoDesenvolvedor"/>
+            <TextView
+                android:id="@+id/emailDoDesenvolvedor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imagemDoDesenvolvedor"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="E-mail: contato@araujodeveloper.com.br"
+                android:textSize="22sp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/blogDoDesenvolvedor"
-        android:textSize="22sp"
-        android:text="Blog/Portfólio: wwww.araujodeveloper.com.br"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/emailDoDesenvolvedor"/>
+            <TextView
+                android:id="@+id/blogDoDesenvolvedor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/emailDoDesenvolvedor"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Blog/Portfólio: wwww.araujodeveloper.com.br"
+                android:textSize="22sp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/Agradecimento"
-        android:layout_below="@id/blogDoDesenvolvedor"
-        android:textSize="14sp"
-        android:layout_marginTop="40dp"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:layout_marginBottom="20dp"
-        android:text="Obrigado por usar este aplicativo!  :)"/>
-</RelativeLayout>
-</ScrollView>
+            <TextView
+                android:id="@+id/Agradecimento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/blogDoDesenvolvedor"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="40dp"
+                android:gravity="center"
+                android:text="Obrigado por usar este aplicativo!  :)"
+                android:textSize="14sp" />
+        </RelativeLayout>
+    </ScrollView>
+
+    <ListView
+        android:id="@+id/navListActivitySobre"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#ffeeee"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp" />
+</android.support.v4.widget.DrawerLayout>
