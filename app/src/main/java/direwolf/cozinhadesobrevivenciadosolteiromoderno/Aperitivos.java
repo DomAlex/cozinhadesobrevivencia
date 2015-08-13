@@ -1,26 +1,105 @@
 package direwolf.cozinhadesobrevivenciadosolteiromoderno;
 
+import android.content.res.Configuration;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class Aperitivos extends AppCompatActivity {
-
+    private ActionBarDrawerToggle actionBarDrawerToggle;
+    private DrawerLayout drawerLayout;
+    private ArrayAdapter<String> adapter;
+    private ListView drawerList;
+    private String tituloDaActivity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aperitivos);
 
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayoutActivityAperitivos);
+        drawerList = (ListView) findViewById(R.id.navListActivityAperitivos);
+        tituloDaActivity = getTitle().toString();
+
+
+        addDrawerItems();
+        setUpDrawer();
+
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+
+
+
+
+
         ListView listaDeAperitivos;
         String[] receitasDeAperitivos = {"Paçoca Caseira","Queijo de pipoqueiro","Rolinho empanado de frios"};
-        ArrayAdapter<String> adapter;
+        ArrayAdapter<String> aperitivosAdapter;
 
-        adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,receitasDeAperitivos);
+        aperitivosAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,receitasDeAperitivos);
         listaDeAperitivos = (ListView)findViewById(R.id.listViewAperitivos);
-        listaDeAperitivos.setAdapter(adapter);
+        listaDeAperitivos.setAdapter(aperitivosAdapter);
+    }
+
+    protected void addDrawerItems() {
+        String[] itemsDoNavigationDrawer = {"Inicio", "Receitas Salgadas", "Receitas Doces", "Aperitivos", "Molhos", "Sobre o app"};
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, itemsDoNavigationDrawer);
+        drawerList.setAdapter(adapter);
+        drawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getApplicationContext(), "Xablau!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
+    private void setUpDrawer() {
+        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open_drawer, R.string.close_drawer) {
+
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+                getSupportActionBar().setTitle("Navegação");
+                invalidateOptionsMenu();
+
+            }
+
+            public void onDrawerClosed(View view) {
+                super.onDrawerClosed(view);
+                getSupportActionBar().setTitle(tituloDaActivity);
+                invalidateOptionsMenu();
+            }
+
+        };
+
+        actionBarDrawerToggle.setDrawerIndicatorEnabled(true);
+        drawerLayout.setDrawerListener(actionBarDrawerToggle);
+
+    }
+
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+
+        actionBarDrawerToggle.syncState();
+
+    }
+
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        actionBarDrawerToggle.onConfigurationChanged(newConfig);
+
     }
 
     @Override
@@ -39,6 +118,10 @@ public class Aperitivos extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            return true;
+        }
+
+        if(actionBarDrawerToggle.onOptionsItemSelected(item)){
             return true;
         }
 

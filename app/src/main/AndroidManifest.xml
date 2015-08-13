@@ -15,11 +15,7 @@
         <activity
             android:name=".SobreOApp"
             android:label= "@string/title_activity_sobre_oapp" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".ReceitasSalgadas"
@@ -33,12 +29,15 @@
         <activity
             android:name=".Aperitivos"
             android:label="@string/title_activity_aperitivos" >
-
         </activity>
         <activity
             android:name=".Molhos"
             android:label="@string/title_activity_molhos" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

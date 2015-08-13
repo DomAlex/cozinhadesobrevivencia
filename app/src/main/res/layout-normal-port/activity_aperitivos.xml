@@ -1,9 +1,12 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="direwolf.cozinhadesobrevivenciadosolteiromoderno.Aperitivos">
-
+    tools:context="direwolf.cozinhadesobrevivenciadosolteiromoderno.Aperitivos"
+    android:id="@+id/drawerLayoutActivityAperitivos">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -11,5 +14,14 @@
 
     </ListView>
 
-
 </RelativeLayout>
+    <ListView
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:id="@+id/navListActivityAperitivos"
+        android:layout_gravity="start"
+        android:background="#ffeeee"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"/>
+</android.support.v4.widget.DrawerLayout>
