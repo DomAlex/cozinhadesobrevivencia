@@ -5,6 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -12,14 +15,35 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="50sp"
-            android:text="Xablau !!!"
+            android:textSize="30sp"
+            android:text="Erro 404, Xablau !!"
             android:gravity="center"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:id="@+id/xablau"/>
+            android:id="@+id/xablau"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/elmoXablau"
+            android:layout_below="@id/xablau"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/elmo_xablau"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/elmoXablau"
+            android:textSize="16dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:text="Não tem nada para se ver aqui ainda, e estou com preguiça de programar a Main activity. \n\n Vai ver se tem algo interessante no Navigation Drawer, arrastando o seu dedo para o lado direito da tela."/>
+
 
     </RelativeLayout>
+    </ScrollView>
     <ListView
         android:id="@+id/navListActivityMain"
         android:layout_width="200dp"
