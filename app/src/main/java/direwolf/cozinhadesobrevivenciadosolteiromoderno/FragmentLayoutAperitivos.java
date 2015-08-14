@@ -1,5 +1,6 @@
 package direwolf.cozinhadesobrevivenciadosolteiromoderno;
 
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.v4.widget.DrawerLayout;
@@ -14,6 +15,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import direwolf.cozinhadesobrevivenciadosolteiromoderno.R;
+import direwolf.cozinhadesobrevivenciadosolteiromoderno.direwolf.cozinhadesobrevivenciadosolteiromoderno.fragments.FragmentPacocaCaseira;
+import direwolf.cozinhadesobrevivenciadosolteiromoderno.direwolf.cozinhadesobrevivenciadosolteiromoderno.fragments.FragmentQueijoDePipoqueiro;
+import direwolf.cozinhadesobrevivenciadosolteiromoderno.direwolf.cozinhadesobrevivenciadosolteiromoderno.fragments.FragmentRolinhoEmpanadoDeFrios;
 
 public class FragmentLayoutAperitivos extends AppCompatActivity {
 
@@ -22,6 +26,7 @@ public class FragmentLayoutAperitivos extends AppCompatActivity {
     private ArrayAdapter<String> adapter;
     private ListView drawerList;
     private String tituloDaActivity;
+    private int id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +41,38 @@ public class FragmentLayoutAperitivos extends AppCompatActivity {
 
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+        Intent intent = getIntent();
+        if(intent != null){
+            Bundle bundle = intent.getExtras();
+            if(bundle != null){
+                id = bundle.getInt("id");
+            }
+        }
+        switch (id) {
+            case 0:
+                FragmentPacocaCaseira pacocaCaseira = new FragmentPacocaCaseira();
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragmentLayoutReceitasSalgadas, pacocaCaseira);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+                break;
+            case 1:
+                FragmentQueijoDePipoqueiro queijoDePipoqueiro = new FragmentQueijoDePipoqueiro();
+                fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragmentLayoutReceitasSalgadas, queijoDePipoqueiro);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+                break;
+            case 2:
+                FragmentRolinhoEmpanadoDeFrios rolinhoEmpanadoDeFrios = new FragmentRolinhoEmpanadoDeFrios();
+                fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragmentLayoutReceitasSalgadas, rolinhoEmpanadoDeFrios);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+                break;
+        }
     }
     protected void addDrawerItems() {
         String[] itemsDoNavigationDrawer = {"Inicio", "Receitas Salgadas", "Receitas Doces", "Aperitivos", "Molhos", "Sobre o app"};
@@ -45,32 +82,33 @@ public class FragmentLayoutAperitivos extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent it;
-                switch (position){
+                switch (position) {
                     case 0:
-                        it = new Intent(getApplicationContext(),MainActivity.class);
+                        it = new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(it);
                         break;
                     case 1:
-                        it = new Intent(getApplicationContext(),ReceitasSalgadas.class);
+                        it = new Intent(getApplicationContext(), ReceitasSalgadas.class);
                         startActivity(it);
                         break;
                     case 2:
-                        it = new Intent(getApplicationContext(),ReceitasDoces.class);
+                        it = new Intent(getApplicationContext(), ReceitasDoces.class);
                         startActivity(it);
                         break;
                     case 3:
-                        it = new Intent(getApplicationContext(),Aperitivos.class);
+                        it = new Intent(getApplicationContext(), Aperitivos.class);
                         startActivity(it);
                         break;
                     case 4:
-                        it = new Intent(getApplicationContext(),Molhos.class);
+                        it = new Intent(getApplicationContext(), Molhos.class);
                         startActivity(it);
                         break;
                     case 5:
-                        it = new Intent(getApplicationContext(),SobreOApp.class);
+                        it = new Intent(getApplicationContext(), SobreOApp.class);
                         startActivity(it);
                         break;
-                }            }
+                }
+            }
         });
 
     }
@@ -138,5 +176,14 @@ public class FragmentLayoutAperitivos extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (getFragmentManager().getBackStackEntryCount() > 0 ){
+            getFragmentManager().popBackStack();
+        } else {
+            super.onBackPressed();
+        }
     }
 }

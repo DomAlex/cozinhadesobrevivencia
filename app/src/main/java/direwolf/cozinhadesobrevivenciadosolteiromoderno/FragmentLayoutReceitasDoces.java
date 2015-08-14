@@ -1,5 +1,6 @@
 package direwolf.cozinhadesobrevivenciadosolteiromoderno;
 
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.v4.widget.DrawerLayout;
@@ -14,6 +15,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import direwolf.cozinhadesobrevivenciadosolteiromoderno.R;
+import direwolf.cozinhadesobrevivenciadosolteiromoderno.direwolf.cozinhadesobrevivenciadosolteiromoderno.fragments.FragmentBoloDeCaneca;
+import direwolf.cozinhadesobrevivenciadosolteiromoderno.direwolf.cozinhadesobrevivenciadosolteiromoderno.fragments.FragmentBoloDeLeite;
+import direwolf.cozinhadesobrevivenciadosolteiromoderno.direwolf.cozinhadesobrevivenciadosolteiromoderno.fragments.FragmentMousse;
+import direwolf.cozinhadesobrevivenciadosolteiromoderno.direwolf.cozinhadesobrevivenciadosolteiromoderno.fragments.FragmentQueijadinha;
+import direwolf.cozinhadesobrevivenciadosolteiromoderno.direwolf.cozinhadesobrevivenciadosolteiromoderno.fragments.FragmentTortaDeCoco;
 
 public class FragmentLayoutReceitasDoces extends AppCompatActivity {
     private ActionBarDrawerToggle actionBarDrawerToggle;
@@ -21,6 +27,7 @@ public class FragmentLayoutReceitasDoces extends AppCompatActivity {
     private ArrayAdapter<String> adapter;
     private ListView drawerList;
     private String tituloDaActivity;
+    private int id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +43,52 @@ public class FragmentLayoutReceitasDoces extends AppCompatActivity {
 
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        Intent intent = getIntent();
+        if(intent != null){
+            Bundle bundle = intent.getExtras();
+            if(bundle != null){
+                id = bundle.getInt("id");
+            }
+        }
+        switch (id){
+            case 0:
+                FragmentBoloDeCaneca boloDeCaneca = new FragmentBoloDeCaneca();
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragmentLayoutReceitasSalgadas,boloDeCaneca);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+                break;
+            case 1:
+                FragmentBoloDeLeite boloDeLeite = new FragmentBoloDeLeite();
+                fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragmentLayoutReceitasSalgadas, boloDeLeite);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+                break;
+            case 2:
+                FragmentMousse mousse = new FragmentMousse();
+                fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragmentLayoutReceitasSalgadas,mousse);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+                break;
+            case 3:
+                FragmentQueijadinha queijadinha = new FragmentQueijadinha();
+                fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragmentLayoutReceitasSalgadas,queijadinha);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+                break;
+            case 4:
+                FragmentTortaDeCoco tortaDeCoco = new FragmentTortaDeCoco();
+                fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragmentLayoutReceitasSalgadas,tortaDeCoco);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+                break;
+        }
+
     }
     protected void addDrawerItems() {
         String[] itemsDoNavigationDrawer = {"Inicio", "Receitas Salgadas", "Receitas Doces", "Aperitivos", "Molhos", "Sobre o app"};
@@ -138,5 +191,14 @@ public class FragmentLayoutReceitasDoces extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (getFragmentManager().getBackStackEntryCount() > 0 ){
+            getFragmentManager().popBackStack();
+        } else {
+            super.onBackPressed();
+        }
     }
 }

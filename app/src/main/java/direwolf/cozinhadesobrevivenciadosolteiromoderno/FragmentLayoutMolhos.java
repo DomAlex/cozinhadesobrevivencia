@@ -1,5 +1,6 @@
 package direwolf.cozinhadesobrevivenciadosolteiromoderno;
 
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.v4.widget.DrawerLayout;
@@ -14,6 +15,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import direwolf.cozinhadesobrevivenciadosolteiromoderno.R;
+import direwolf.cozinhadesobrevivenciadosolteiromoderno.direwolf.cozinhadesobrevivenciadosolteiromoderno.fragments.FragmentMolhoAmericano;
+import direwolf.cozinhadesobrevivenciadosolteiromoderno.direwolf.cozinhadesobrevivenciadosolteiromoderno.fragments.FragmentMolhoBranco;
+import direwolf.cozinhadesobrevivenciadosolteiromoderno.direwolf.cozinhadesobrevivenciadosolteiromoderno.fragments.FragmentMolhoDeTomate;
+import direwolf.cozinhadesobrevivenciadosolteiromoderno.direwolf.cozinhadesobrevivenciadosolteiromoderno.fragments.FragmentPastaDeAtum;
+import direwolf.cozinhadesobrevivenciadosolteiromoderno.direwolf.cozinhadesobrevivenciadosolteiromoderno.fragments.FragmentPastaDeCebola;
+import direwolf.cozinhadesobrevivenciadosolteiromoderno.direwolf.cozinhadesobrevivenciadosolteiromoderno.fragments.FragmentPastaDeGalinha;
 
 public class FragmentLayoutMolhos extends AppCompatActivity {
 
@@ -22,6 +29,7 @@ public class FragmentLayoutMolhos extends AppCompatActivity {
     private ArrayAdapter<String> adapter;
     private ListView drawerList;
     private String tituloDaActivity;
+    private int id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +44,59 @@ public class FragmentLayoutMolhos extends AppCompatActivity {
 
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        Intent intent = getIntent();
+        if(intent != null){
+            Bundle bundle = intent.getExtras();
+            if(bundle != null){
+                id = bundle.getInt("id");
+            }
+        }
+        switch (id){
+            case 0:
+                FragmentMolhoBranco molhoBranco = new FragmentMolhoBranco();
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragmentLayoutReceitasSalgadas,molhoBranco);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+                break;
+            case 1:
+                FragmentMolhoDeTomate molhoDeTomate = new FragmentMolhoDeTomate();
+                fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragmentLayoutReceitasSalgadas, molhoDeTomate);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+                break;
+            case 2:
+                FragmentPastaDeCebola pastaDeCebola = new FragmentPastaDeCebola();
+                fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragmentLayoutReceitasSalgadas,pastaDeCebola);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+                break;
+            case 3:
+                FragmentMolhoAmericano molhoAmericano = new FragmentMolhoAmericano();
+                fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragmentLayoutReceitasSalgadas,molhoAmericano);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+                break;
+            case 4:
+                FragmentPastaDeGalinha pastaDeGalinha = new FragmentPastaDeGalinha();
+                fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragmentLayoutReceitasSalgadas,pastaDeGalinha);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+                break;
+            case 5:
+                FragmentPastaDeAtum pastaDeAtum = new FragmentPastaDeAtum();
+                fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragmentLayoutReceitasSalgadas,pastaDeAtum);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+                break;
+        }
+
     }
     protected void addDrawerItems() {
         String[] itemsDoNavigationDrawer = {"Inicio", "Receitas Salgadas", "Receitas Doces", "Aperitivos", "Molhos", "Sobre o app"};
@@ -138,5 +199,14 @@ public class FragmentLayoutMolhos extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (getFragmentManager().getBackStackEntryCount() > 0 ){
+            getFragmentManager().popBackStack();
+        } else {
+            super.onBackPressed();
+        }
     }
 }

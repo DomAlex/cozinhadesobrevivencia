@@ -1,5 +1,6 @@
 package direwolf.cozinhadesobrevivenciadosolteiromoderno;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -36,11 +37,6 @@ public class Aperitivos extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-
-
-
-
-
         ListView listaDeAperitivos;
         String[] receitasDeAperitivos = {"Paçoca Caseira","Queijo de pipoqueiro","Rolinho empanado de frios"};
         ArrayAdapter<String> aperitivosAdapter;
@@ -48,6 +44,34 @@ public class Aperitivos extends AppCompatActivity {
         aperitivosAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,receitasDeAperitivos);
         listaDeAperitivos = (ListView)findViewById(R.id.listViewAperitivos);
         listaDeAperitivos.setAdapter(aperitivosAdapter);
+
+        listaDeAperitivos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent it;
+                Bundle bundle = new Bundle();
+                switch (position) {
+                    case 0:
+                        it = new Intent(getApplicationContext(), FragmentLayoutAperitivos.class);
+                        bundle.putInt("id", 0);
+                        it.putExtras(bundle);
+                        startActivity(it);
+                        break;
+                    case 1:
+                        it = new Intent(getApplicationContext(), FragmentLayoutAperitivos.class);
+                        bundle.putInt("id", 1);
+                        it.putExtras(bundle);
+                        startActivity(it);
+                        break;
+                    case 2:
+                        it = new Intent(getApplicationContext(), FragmentLayoutAperitivos.class);
+                        bundle.putInt("id", 2);
+                        it.putExtras(bundle);
+                        startActivity(it);
+                        break;
+                }
+            }
+        });
     }
 
     protected void addDrawerItems() {

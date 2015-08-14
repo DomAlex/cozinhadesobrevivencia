@@ -49,6 +49,49 @@ public class ReceitasDoces extends AppCompatActivity {
 
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,receitasDoces);
         listaDeReceitasDoces.setAdapter(adapter);
+
+        listaDeReceitasDoces.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Intent it;
+                Bundle bundle = new Bundle();
+                switch (position){
+                    case 0:
+                        it = new Intent(getApplicationContext(),FragmentLayoutReceitasDoces.class);
+                        bundle.putInt("id",0);
+                        it.putExtras(bundle);
+                        startActivity(it);
+                        break;
+                    case 1:
+                        it = new Intent(getApplicationContext(),FragmentLayoutReceitasDoces.class);
+                        bundle.putInt("id", 1);
+                        it.putExtras(bundle);
+                        startActivity(it);
+                        break;
+                    case 2:
+                        it = new Intent(getApplicationContext(),FragmentLayoutReceitasDoces.class);
+                        bundle.putInt("id", 2);
+                        it.putExtras(bundle);
+                        startActivity(it);
+                        break;
+                    case 3:
+                        it = new Intent(getApplicationContext(),FragmentLayoutReceitasDoces.class);
+                        bundle.putInt("id", 3);
+                        it.putExtras(bundle);
+                        startActivity(it);
+                        break;
+                    case 4:
+                        it = new Intent(getApplicationContext(),FragmentLayoutReceitasDoces.class);
+                        bundle.putInt("id", 4);
+                        it.putExtras(bundle);
+                        startActivity(it);
+                        break;
+
+                }
+
+            }
+        });
     }
 
     protected void addDrawerItems() {
