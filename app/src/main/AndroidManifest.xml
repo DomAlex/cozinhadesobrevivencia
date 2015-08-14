@@ -88,6 +88,30 @@
             android:name=".direwolf.cozinhadesobrevivenciadosolteiromoderno.fragments.FragmentTortaDeCoco"
             android:label="@string/title_activity_fragment_torta_de_coco" >
         </activity>
+        <activity
+            android:name=".direwolf.cozinhadesobrevivenciadosolteiromoderno.fragments.FragmentMolhoAmericano"
+            android:label="@string/title_activity_fragment_molho_americano" >
+        </activity>
+        <activity
+            android:name=".direwolf.cozinhadesobrevivenciadosolteiromoderno.fragments.FragmentMolhoBranco"
+            android:label="@string/title_activity_fragment_molho_branco" >
+        </activity>
+        <activity
+            android:name=".direwolf.cozinhadesobrevivenciadosolteiromoderno.fragments.FragmentMolhoDeTomate"
+            android:label="@string/title_activity_fragment_molho_de_tomate" >
+        </activity>
+        <activity
+            android:name=".direwolf.cozinhadesobrevivenciadosolteiromoderno.fragments.FragmentPastaDeAtum"
+            android:label="@string/title_activity_fragment_pasta_de_atum" >
+        </activity>
+        <activity
+            android:name=".direwolf.cozinhadesobrevivenciadosolteiromoderno.fragments.FragmentPastaDeCebola"
+            android:label="@string/title_activity_fragment_pasta_de_cebola" >
+        </activity>
+        <activity
+            android:name=".direwolf.cozinhadesobrevivenciadosolteiromoderno.fragments.FragmentPastaDeGalinha"
+            android:label="@string/title_activity_fragment_pasta_de_galinha" >
+        </activity>
     </application>
 
 </manifest>

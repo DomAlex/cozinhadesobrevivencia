@@ -39,4 +39,10 @@
     <string name="title_activity_fragment_mousse">FragmentMousse</string>
     <string name="title_activity_fragment_queijadinha">FragmentQueijadinha</string>
     <string name="title_activity_fragment_torta_de_coco">FragmentTortaDeCoco</string>
+    <string name="title_activity_fragment_molho_americano">FragmentMolhoAmericano</string>
+    <string name="title_activity_fragment_molho_branco">FragmentMolhoBranco</string>
+    <string name="title_activity_fragment_molho_de_tomate">FragmentMolhoDeTomate</string>
+    <string name="title_activity_fragment_pasta_de_atum">FragmentPastaDeAtum</string>
+    <string name="title_activity_fragment_pasta_de_cebola">FragmentPastaDeCebola</string>
+    <string name="title_activity_fragment_pasta_de_galinha">FragmentPastaDeGalinha</string>
 </resources>
