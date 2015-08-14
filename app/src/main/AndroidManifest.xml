@@ -112,6 +112,18 @@
             android:name=".direwolf.cozinhadesobrevivenciadosolteiromoderno.fragments.FragmentPastaDeGalinha"
             android:label="@string/title_activity_fragment_pasta_de_galinha" >
         </activity>
+        <activity
+            android:name=".direwolf.cozinhadesobrevivenciadosolteiromoderno.fragments.FragmentPacocaCaseira"
+            android:label="@string/title_activity_fragment_pacoca_caseira" >
+        </activity>
+        <activity
+            android:name=".direwolf.cozinhadesobrevivenciadosolteiromoderno.fragments.FragmentQueijoDePipoqueiro"
+            android:label="@string/title_activity_fragment_queijo_de_pipoqueiro" >
+        </activity>
+        <activity
+            android:name=".direwolf.cozinhadesobrevivenciadosolteiromoderno.fragments.FragmentRolinhoEmpanadoDeFrios"
+            android:label="@string/title_activity_fragment_rolinho_empanado_de_frios" >
+        </activity>
     </application>
 
 </manifest>

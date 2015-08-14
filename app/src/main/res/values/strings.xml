@@ -45,4 +45,9 @@
     <string name="title_activity_fragment_pasta_de_atum">FragmentPastaDeAtum</string>
     <string name="title_activity_fragment_pasta_de_cebola">FragmentPastaDeCebola</string>
     <string name="title_activity_fragment_pasta_de_galinha">FragmentPastaDeGalinha</string>
+    <string name="title_activity_fragment_pacoca_caseira">FragmentPacocaCaseira</string>
+    <string name="title_activity_fragment_queijo_de_pipoqueiro">FragmentQueijoDePipoqueiro</string>
+    <string name="title_activity_fragment_rolinho_empanado_de_frios">
+        FragmentRolinhoEmpanadoDeFrios
+    </string>
 </resources>
