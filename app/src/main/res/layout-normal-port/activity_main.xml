@@ -5,6 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -40,6 +43,7 @@
         android:text="Não tem nada para se ver aqui ainda, e estou com preguiça de programar a Main activity. \n\n Vai ver se tem algo interessante no Navigation Drawer, arrastando o seu dedo para o lado direito da tela."/>
 
 </RelativeLayout>
+    </ScrollView>
     <ListView
         android:id="@+id/navListActivityMain"
         android:layout_width="200dp"
