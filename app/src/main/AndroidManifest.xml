@@ -18,8 +18,7 @@
         </activity>
         <activity
             android:name=".SobreOApp"
-            android:label= "@string/title_activity_sobre_oapp" >
-
+            android:label="@string/title_activity_sobre_oapp" >
         </activity>
         <activity
             android:name=".ReceitasSalgadas"
@@ -36,6 +35,42 @@
         <activity
             android:name=".Molhos"
             android:label="@string/title_activity_molhos" >
+        </activity>
+        <activity
+            android:name=".FragmentLayoutReceitasDoces"
+            android:label="@string/title_activity_fragment_layout_receitas_doces" >
+        </activity>
+        <activity
+            android:name=".FragmentLayoutReceitasSalgadas"
+            android:label="@string/title_activity_fragment_layout_receitas_salgadas" >
+        </activity>
+        <activity
+            android:name=".FragmentLayoutAperitivos"
+            android:label="@string/title_activity_fragment_layout_aperitivos" >
+        </activity>
+        <activity
+            android:name=".FragmentLayoutMolhos"
+            android:label="@string/title_activity_fragment_layout_molhos" >
+        </activity>
+        <activity
+            android:name=".direwolf.cozinhadesobrevivenciadosolteiromoderno.fragments.FragmentSopaParaguaia"
+            android:label="@string/title_activity_fragment_sopa_paraguaia" >
+        </activity>
+        <activity
+            android:name=".direwolf.cozinhadesobrevivenciadosolteiromoderno.fragments.FragmentBoloDePaoDeQueijo"
+            android:label="@string/title_activity_fragment_bolo_de_pao_de_queijo" >
+        </activity>
+        <activity
+            android:name=".direwolf.cozinhadesobrevivenciadosolteiromoderno.fragments.FragmentTortaDePalmito"
+            android:label="@string/title_activity_fragment_torta_de_palmito" >
+        </activity>
+        <activity
+            android:name=".direwolf.cozinhadesobrevivenciadosolteiromoderno.fragments.FragmentTortaDePizza"
+            android:label="@string/title_activity_fragment_torta_de_pizza" >
+        </activity>
+        <activity
+            android:name=".direwolf.cozinhadesobrevivenciadosolteiromoderno.fragments.FragmentBoloDeCaneca"
+            android:label="@string/title_activity_fragment_bolo_de_caneca" >
         </activity>
     </application>
 

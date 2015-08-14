@@ -20,4 +20,19 @@
     <string name="title_activity_molhos">Molhos</string>
     <string name="open_drawer">Navegação aberta</string>
     <string name="close_drawer">Navegação fechada</string>
+
+
+    <string name="title_activity_fragment_layout_receitas_doces">FragmentLayoutReceitasDoces
+    </string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_fragment_layout_receitas_salgadas">FragmentLayoutReceitasSalgadas
+    </string>
+    <string name="title_activity_fragment_layout_aperitivos">FragmentLayoutAperitivos</string>
+    <string name="title_activity_fragment_layout_molhos">FragmentLayoutMolhos</string>
+    <string name="title_activity_fragment_sopa_paraguaia">FragmentSopaParaguaia</string>
+    <string name="title_activity_fragment_bolo_de_pao_de_queijo">FragmentBoloDePaoDeQueijo</string>
+    <string name="title_activity_fragment_torta_de_palmito">FragmentTortaDePalmito</string>
+    <string name="title_activity_fragment_torta_de_pizza">FragmentTortaDePizza</string>
+    <string name="title_activity_fragment_bolo_de_caneca">FragmentBoloDeCaneca</string>
 </resources>
