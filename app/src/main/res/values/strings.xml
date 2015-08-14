@@ -35,4 +35,8 @@
     <string name="title_activity_fragment_torta_de_palmito">FragmentTortaDePalmito</string>
     <string name="title_activity_fragment_torta_de_pizza">FragmentTortaDePizza</string>
     <string name="title_activity_fragment_bolo_de_caneca">FragmentBoloDeCaneca</string>
+    <string name="title_activity_fragment_bolo_de_leite">FragmentBoloDeLeite</string>
+    <string name="title_activity_fragment_mousse">FragmentMousse</string>
+    <string name="title_activity_fragment_queijadinha">FragmentQueijadinha</string>
+    <string name="title_activity_fragment_torta_de_coco">FragmentTortaDeCoco</string>
 </resources>

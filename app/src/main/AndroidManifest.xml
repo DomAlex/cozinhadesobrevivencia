@@ -72,6 +72,22 @@
             android:name=".direwolf.cozinhadesobrevivenciadosolteiromoderno.fragments.FragmentBoloDeCaneca"
             android:label="@string/title_activity_fragment_bolo_de_caneca" >
         </activity>
+        <activity
+            android:name=".direwolf.cozinhadesobrevivenciadosolteiromoderno.fragments.FragmentBoloDeLeite"
+            android:label="@string/title_activity_fragment_bolo_de_leite" >
+        </activity>
+        <activity
+            android:name=".direwolf.cozinhadesobrevivenciadosolteiromoderno.fragments.FragmentMousse"
+            android:label="@string/title_activity_fragment_mousse" >
+        </activity>
+        <activity
+            android:name=".direwolf.cozinhadesobrevivenciadosolteiromoderno.fragments.FragmentQueijadinha"
+            android:label="@string/title_activity_fragment_queijadinha" >
+        </activity>
+        <activity
+            android:name=".direwolf.cozinhadesobrevivenciadosolteiromoderno.fragments.FragmentTortaDeCoco"
+            android:label="@string/title_activity_fragment_torta_de_coco" >
+        </activity>
     </application>
 
 </manifest>
