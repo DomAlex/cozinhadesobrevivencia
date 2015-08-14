@@ -1,5 +1,6 @@
 package direwolf.cozinhadesobrevivenciadosolteiromoderno;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -47,6 +48,41 @@ public class ReceitasSalgadas extends AppCompatActivity {
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,receitasSalgadas);
         listaDeReceitasSalgadas.setAdapter(adapter);
 
+
+        listaDeReceitasSalgadas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent it;
+                Bundle bundle = new Bundle();
+                switch (position){
+                    case 0:
+                        it = new Intent(getApplicationContext(),FragmentLayoutReceitasSalgadas.class);
+                        bundle.putInt("id",0);
+                        it.putExtras(bundle);
+                        startActivity(it);
+                        break;
+                    case 1:
+                        it = new Intent(getApplicationContext(),FragmentLayoutReceitasSalgadas.class);
+                        bundle.putInt("id", 1);
+                        it.putExtras(bundle);
+                        startActivity(it);
+                        break;
+                    case 2:
+                        it = new Intent(getApplicationContext(),FragmentLayoutReceitasSalgadas.class);
+                        bundle.putInt("id", 2);
+                        it.putExtras(bundle);
+                        startActivity(it);
+                        break;
+                    case 3:
+                        it = new Intent(getApplicationContext(),FragmentLayoutReceitasSalgadas.class);
+                        bundle.putInt("id", 3);
+                        it.putExtras(bundle);
+                        startActivity(it);
+                        break;
+
+                }
+            }
+        });
     }
 
     protected void addDrawerItems() {
@@ -56,8 +92,33 @@ public class ReceitasSalgadas extends AppCompatActivity {
         drawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(), "Xablau!", Toast.LENGTH_SHORT).show();
-            }
+                Intent it;
+                switch (position){
+                    case 0:
+                        it = new Intent(getApplicationContext(),MainActivity.class);
+                        startActivity(it);
+                        break;
+                    case 1:
+                        it = new Intent(getApplicationContext(),ReceitasSalgadas.class);
+                        startActivity(it);
+                        break;
+                    case 2:
+                        it = new Intent(getApplicationContext(),ReceitasDoces.class);
+                        startActivity(it);
+                        break;
+                    case 3:
+                        it = new Intent(getApplicationContext(),Aperitivos.class);
+                        startActivity(it);
+                        break;
+                    case 4:
+                        it = new Intent(getApplicationContext(),Molhos.class);
+                        startActivity(it);
+                        break;
+                    case 5:
+                        it = new Intent(getApplicationContext(),SobreOApp.class);
+                        startActivity(it);
+                        break;
+                }            }
         });
 
     }
