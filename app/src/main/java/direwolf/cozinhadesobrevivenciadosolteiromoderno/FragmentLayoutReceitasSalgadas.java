@@ -32,8 +32,8 @@ public class FragmentLayoutReceitasSalgadas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fragment_layout_receitas_salgadas);
-        drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayoutActivityReceitasSalgadas);
-        drawerList = (ListView) findViewById(R.id.navListActivityReceitasSalgadas);
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayoutFragmentLayoutReceitasSalgadas);
+        drawerList = (ListView) findViewById(R.id.navListFragmentLayoutReceitasSalgadas);
         tituloDaActivity = getTitle().toString();
 
 

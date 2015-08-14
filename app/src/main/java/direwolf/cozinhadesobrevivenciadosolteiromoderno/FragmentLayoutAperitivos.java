@@ -31,8 +31,8 @@ public class FragmentLayoutAperitivos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fragment_layout_aperitivos);
-        drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayoutActivityAperitivos);
-        drawerList = (ListView) findViewById(R.id.navListActivityAperitivos);
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayoutFragmentLayoutAperitivos);
+        drawerList = (ListView) findViewById(R.id.navListFragmentLayoutAperitivos);
         tituloDaActivity = getTitle().toString();
 
 
@@ -54,21 +54,21 @@ public class FragmentLayoutAperitivos extends AppCompatActivity {
             case 0:
                 FragmentPacocaCaseira pacocaCaseira = new FragmentPacocaCaseira();
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragmentLayoutReceitasSalgadas, pacocaCaseira);
+                fragmentTransaction.replace(R.id.fragmentLayoutAperitivos, pacocaCaseira);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
                 break;
             case 1:
                 FragmentQueijoDePipoqueiro queijoDePipoqueiro = new FragmentQueijoDePipoqueiro();
                 fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragmentLayoutReceitasSalgadas, queijoDePipoqueiro);
+                fragmentTransaction.replace(R.id.fragmentLayoutAperitivos, queijoDePipoqueiro);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
                 break;
             case 2:
                 FragmentRolinhoEmpanadoDeFrios rolinhoEmpanadoDeFrios = new FragmentRolinhoEmpanadoDeFrios();
                 fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragmentLayoutReceitasSalgadas, rolinhoEmpanadoDeFrios);
+                fragmentTransaction.replace(R.id.fragmentLayoutAperitivos, rolinhoEmpanadoDeFrios);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
                 break;

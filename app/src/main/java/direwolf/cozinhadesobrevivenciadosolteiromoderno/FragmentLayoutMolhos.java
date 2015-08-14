@@ -34,8 +34,8 @@ public class FragmentLayoutMolhos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fragment_layout_molhos);
-        drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayoutActivityMolhos);
-        drawerList = (ListView) findViewById(R.id.navListActivityMolhos);
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayoutFragmentLayoutMolhos);
+        drawerList = (ListView) findViewById(R.id.navListFragmentLayoutMolhos);
         tituloDaActivity = getTitle().toString();
 
 
@@ -56,42 +56,42 @@ public class FragmentLayoutMolhos extends AppCompatActivity {
             case 0:
                 FragmentMolhoBranco molhoBranco = new FragmentMolhoBranco();
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragmentLayoutReceitasSalgadas,molhoBranco);
+                fragmentTransaction.replace(R.id.fragmentLayoutMolhos,molhoBranco);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
                 break;
             case 1:
                 FragmentMolhoDeTomate molhoDeTomate = new FragmentMolhoDeTomate();
                 fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragmentLayoutReceitasSalgadas, molhoDeTomate);
+                fragmentTransaction.replace(R.id.fragmentLayoutMolhos, molhoDeTomate);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
                 break;
             case 2:
                 FragmentPastaDeCebola pastaDeCebola = new FragmentPastaDeCebola();
                 fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragmentLayoutReceitasSalgadas,pastaDeCebola);
+                fragmentTransaction.replace(R.id.fragmentLayoutMolhos,pastaDeCebola);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
                 break;
             case 3:
                 FragmentMolhoAmericano molhoAmericano = new FragmentMolhoAmericano();
                 fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragmentLayoutReceitasSalgadas,molhoAmericano);
+                fragmentTransaction.replace(R.id.fragmentLayoutMolhos,molhoAmericano);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
                 break;
             case 4:
                 FragmentPastaDeGalinha pastaDeGalinha = new FragmentPastaDeGalinha();
                 fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragmentLayoutReceitasSalgadas,pastaDeGalinha);
+                fragmentTransaction.replace(R.id.fragmentLayoutMolhos,pastaDeGalinha);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
                 break;
             case 5:
                 FragmentPastaDeAtum pastaDeAtum = new FragmentPastaDeAtum();
                 fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragmentLayoutReceitasSalgadas,pastaDeAtum);
+                fragmentTransaction.replace(R.id.fragmentLayoutMolhos,pastaDeAtum);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
                 break;
