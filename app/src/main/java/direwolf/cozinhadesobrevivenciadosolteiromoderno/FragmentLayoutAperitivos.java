@@ -19,7 +19,8 @@ import direwolf.cozinhadesobrevivenciadosolteiromoderno.direwolf.cozinhadesobrev
 import direwolf.cozinhadesobrevivenciadosolteiromoderno.direwolf.cozinhadesobrevivenciadosolteiromoderno.fragments.FragmentQueijoDePipoqueiro;
 import direwolf.cozinhadesobrevivenciadosolteiromoderno.direwolf.cozinhadesobrevivenciadosolteiromoderno.fragments.FragmentRolinhoEmpanadoDeFrios;
 
-public class FragmentLayoutAperitivos extends AppCompatActivity {
+public class
+        FragmentLayoutAperitivos extends AppCompatActivity {
 
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private DrawerLayout drawerLayout;
@@ -55,21 +56,21 @@ public class FragmentLayoutAperitivos extends AppCompatActivity {
                 FragmentPacocaCaseira pacocaCaseira = new FragmentPacocaCaseira();
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragmentLayoutAperitivos, pacocaCaseira);
-                fragmentTransaction.addToBackStack(null);
+
                 fragmentTransaction.commit();
                 break;
             case 1:
                 FragmentQueijoDePipoqueiro queijoDePipoqueiro = new FragmentQueijoDePipoqueiro();
                 fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragmentLayoutAperitivos, queijoDePipoqueiro);
-                fragmentTransaction.addToBackStack(null);
+                
                 fragmentTransaction.commit();
                 break;
             case 2:
                 FragmentRolinhoEmpanadoDeFrios rolinhoEmpanadoDeFrios = new FragmentRolinhoEmpanadoDeFrios();
                 fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragmentLayoutAperitivos, rolinhoEmpanadoDeFrios);
-                fragmentTransaction.addToBackStack(null);
+
                 fragmentTransaction.commit();
                 break;
         }

@@ -55,28 +55,28 @@ public class FragmentLayoutReceitasSalgadas extends AppCompatActivity {
                 FragmentBoloDePaoDeQueijo boloDePaoDeQueijo = new FragmentBoloDePaoDeQueijo();
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragmentLayoutReceitasSalgadas,boloDePaoDeQueijo);
-                fragmentTransaction.addToBackStack(null);
+
                 fragmentTransaction.commit();
                 break;
             case 1:
                 FragmentSopaParaguaia sopaParaguaia = new FragmentSopaParaguaia();
                 fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragmentLayoutReceitasSalgadas, sopaParaguaia);
-                fragmentTransaction.addToBackStack(null);
+
                 fragmentTransaction.commit();
                 break;
             case 2:
                 FragmentTortaDePalmito tortaDePalmito = new FragmentTortaDePalmito();
                 fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragmentLayoutReceitasSalgadas,tortaDePalmito);
-                fragmentTransaction.addToBackStack(null);
+
                 fragmentTransaction.commit();
                 break;
             case 3:
                 FragmentTortaDePizza tortaDePizza = new FragmentTortaDePizza();
                 fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragmentLayoutReceitasSalgadas,tortaDePizza);
-                fragmentTransaction.addToBackStack(null);
+
                 fragmentTransaction.commit();
                 break;
         }

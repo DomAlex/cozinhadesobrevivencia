@@ -57,42 +57,42 @@ public class FragmentLayoutMolhos extends AppCompatActivity {
                 FragmentMolhoBranco molhoBranco = new FragmentMolhoBranco();
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragmentLayoutMolhos,molhoBranco);
-                fragmentTransaction.addToBackStack(null);
+
                 fragmentTransaction.commit();
                 break;
             case 1:
                 FragmentMolhoDeTomate molhoDeTomate = new FragmentMolhoDeTomate();
                 fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragmentLayoutMolhos, molhoDeTomate);
-                fragmentTransaction.addToBackStack(null);
+
                 fragmentTransaction.commit();
                 break;
             case 2:
                 FragmentPastaDeCebola pastaDeCebola = new FragmentPastaDeCebola();
                 fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragmentLayoutMolhos,pastaDeCebola);
-                fragmentTransaction.addToBackStack(null);
+
                 fragmentTransaction.commit();
                 break;
             case 3:
                 FragmentMolhoAmericano molhoAmericano = new FragmentMolhoAmericano();
                 fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragmentLayoutMolhos,molhoAmericano);
-                fragmentTransaction.addToBackStack(null);
+
                 fragmentTransaction.commit();
                 break;
             case 4:
                 FragmentPastaDeGalinha pastaDeGalinha = new FragmentPastaDeGalinha();
                 fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragmentLayoutMolhos,pastaDeGalinha);
-                fragmentTransaction.addToBackStack(null);
+
                 fragmentTransaction.commit();
                 break;
             case 5:
                 FragmentPastaDeAtum pastaDeAtum = new FragmentPastaDeAtum();
                 fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragmentLayoutMolhos,pastaDeAtum);
-                fragmentTransaction.addToBackStack(null);
+
                 fragmentTransaction.commit();
                 break;
         }

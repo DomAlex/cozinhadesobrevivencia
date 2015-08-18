@@ -56,35 +56,35 @@ public class FragmentLayoutReceitasDoces extends AppCompatActivity {
                 FragmentBoloDeCaneca boloDeCaneca = new FragmentBoloDeCaneca();
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragmentLayoutReceitasDoces,boloDeCaneca);
-                fragmentTransaction.addToBackStack(null);
+
                 fragmentTransaction.commit();
                 break;
             case 1:
                 FragmentBoloDeLeite boloDeLeite = new FragmentBoloDeLeite();
                 fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragmentLayoutReceitasDoces, boloDeLeite);
-                fragmentTransaction.addToBackStack(null);
+
                 fragmentTransaction.commit();
                 break;
             case 2:
                 FragmentMousse mousse = new FragmentMousse();
                 fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragmentLayoutReceitasDoces,mousse);
-                fragmentTransaction.addToBackStack(null);
+
                 fragmentTransaction.commit();
                 break;
             case 3:
                 FragmentQueijadinha queijadinha = new FragmentQueijadinha();
                 fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragmentLayoutReceitasDoces,queijadinha);
-                fragmentTransaction.addToBackStack(null);
+
                 fragmentTransaction.commit();
                 break;
             case 4:
                 FragmentTortaDeCoco tortaDeCoco = new FragmentTortaDeCoco();
                 fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragmentLayoutReceitasDoces,tortaDeCoco);
-                fragmentTransaction.addToBackStack(null);
+
                 fragmentTransaction.commit();
                 break;
         }
