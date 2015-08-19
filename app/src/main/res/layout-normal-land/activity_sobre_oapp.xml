@@ -2,7 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="direwolf.cozinhadesobrevivenciadosolteiromoderno.SobreOApp">
+    tools:context="direwolf.cozinhadesobrevivenciadosolteiromoderno.SobreOApp"
+    android:id="@id/drawerLayoutActivitySobre">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">

@@ -81,7 +81,33 @@ public class Aperitivos extends AppCompatActivity {
         drawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(), "Xablau!", Toast.LENGTH_SHORT).show();
+                Intent it;
+                switch (position) {
+                    case 0:
+                        it = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(it);
+                        break;
+                    case 1:
+                        it = new Intent(getApplicationContext(), ReceitasSalgadas.class);
+                        startActivity(it);
+                        break;
+                    case 2:
+                        it = new Intent(getApplicationContext(), ReceitasDoces.class);
+                        startActivity(it);
+                        break;
+                    case 3:
+                        it = new Intent(getApplicationContext(), Aperitivos.class);
+                        startActivity(it);
+                        break;
+                    case 4:
+                        it = new Intent(getApplicationContext(), Molhos.class);
+                        startActivity(it);
+                        break;
+                    case 5:
+                        it = new Intent(getApplicationContext(), SobreOApp.class);
+                        startActivity(it);
+                        break;
+                }
             }
         });
 
