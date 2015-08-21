@@ -21,6 +21,7 @@ public class ReceitasDoces extends AppCompatActivity {
     private ArrayAdapter<String> adapter;
     private ListView drawerList;
     private String tituloDaActivity;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,15 +40,13 @@ public class ReceitasDoces extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-
-
         ListView listaDeReceitasDoces;
-        String[] receitasDoces = {"Bolo de Caneca", "Bolo de Leite","Mousse de Maracujá","Queijadinha","Torta de Coco"};
+        String[] receitasDoces = {"Bolo de Caneca", "Bolo de Leite", "Mousse de Maracujá", "Queijadinha", "Torta de Coco"};
         ArrayAdapter<String> adapter;
 
-        listaDeReceitasDoces = (ListView)findViewById(R.id.listViewReceitasDoces);
+        listaDeReceitasDoces = (ListView) findViewById(R.id.listViewReceitasDoces);
 
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,receitasDoces);
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, receitasDoces);
         listaDeReceitasDoces.setAdapter(adapter);
 
         listaDeReceitasDoces.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -56,33 +55,33 @@ public class ReceitasDoces extends AppCompatActivity {
 
                 Intent it;
                 Bundle bundle = new Bundle();
-                switch (position){
+                switch (position) {
                     case 0:
-                        it = new Intent(getApplicationContext(),FragmentLayoutReceitasDoces.class);
-                        bundle.putInt("id",0);
+                        it = new Intent(getApplicationContext(), FragmentLayoutReceitasDoces.class);
+                        bundle.putInt("id", 0);
                         it.putExtras(bundle);
                         startActivity(it);
                         break;
                     case 1:
-                        it = new Intent(getApplicationContext(),FragmentLayoutReceitasDoces.class);
+                        it = new Intent(getApplicationContext(), FragmentLayoutReceitasDoces.class);
                         bundle.putInt("id", 1);
                         it.putExtras(bundle);
                         startActivity(it);
                         break;
                     case 2:
-                        it = new Intent(getApplicationContext(),FragmentLayoutReceitasDoces.class);
+                        it = new Intent(getApplicationContext(), FragmentLayoutReceitasDoces.class);
                         bundle.putInt("id", 2);
                         it.putExtras(bundle);
                         startActivity(it);
                         break;
                     case 3:
-                        it = new Intent(getApplicationContext(),FragmentLayoutReceitasDoces.class);
+                        it = new Intent(getApplicationContext(), FragmentLayoutReceitasDoces.class);
                         bundle.putInt("id", 3);
                         it.putExtras(bundle);
                         startActivity(it);
                         break;
                     case 4:
-                        it = new Intent(getApplicationContext(),FragmentLayoutReceitasDoces.class);
+                        it = new Intent(getApplicationContext(), FragmentLayoutReceitasDoces.class);
                         bundle.putInt("id", 4);
                         it.putExtras(bundle);
                         startActivity(it);
@@ -102,29 +101,35 @@ public class ReceitasDoces extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent it;
-                switch (position){
+                switch (position) {
                     case 0:
-                        it = new Intent(getApplicationContext(),MainActivity.class);
+                        it = new Intent(getApplicationContext(), MainActivity.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 1:
-                        it = new Intent(getApplicationContext(),ReceitasSalgadas.class);
+                        it = new Intent(getApplicationContext(), ReceitasSalgadas.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 2:
-                        it = new Intent(getApplicationContext(),ReceitasDoces.class);
+                        it = new Intent(getApplicationContext(), ReceitasDoces.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 3:
-                        it = new Intent(getApplicationContext(),Aperitivos.class);
+                        it = new Intent(getApplicationContext(), Aperitivos.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 4:
-                        it = new Intent(getApplicationContext(),Molhos.class);
+                        it = new Intent(getApplicationContext(), Molhos.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 5:
-                        it = new Intent(getApplicationContext(),SobreOApp.class);
+                        it = new Intent(getApplicationContext(), SobreOApp.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                 }
@@ -193,7 +198,7 @@ public class ReceitasDoces extends AppCompatActivity {
             return true;
         }
 
-        if(actionBarDrawerToggle.onOptionsItemSelected(item)){
+        if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
 

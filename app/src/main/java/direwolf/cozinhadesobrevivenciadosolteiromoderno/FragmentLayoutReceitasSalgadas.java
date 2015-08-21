@@ -28,6 +28,7 @@ public class FragmentLayoutReceitasSalgadas extends AppCompatActivity {
     private ListView drawerList;
     private String tituloDaActivity;
     private int id;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,43 +45,44 @@ public class FragmentLayoutReceitasSalgadas extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Intent intent = getIntent();
-        if(intent != null){
+        if (intent != null) {
             Bundle bundle = intent.getExtras();
-            if(bundle != null){
+            if (bundle != null) {
                 id = bundle.getInt("id");
             }
         }
-        switch (id){
+        switch (id) {
             case 0:
                 FragmentBoloDePaoDeQueijo boloDePaoDeQueijo = new FragmentBoloDePaoDeQueijo();
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragmentLayoutReceitasSalgadas,boloDePaoDeQueijo);
-
+                fragmentTransaction.replace(R.id.fragmentLayoutReceitasSalgadas, boloDePaoDeQueijo);
+                getSupportActionBar().setTitle(R.string.title_activity_fragment_bolo_de_pao_de_queijo);
                 fragmentTransaction.commit();
                 break;
             case 1:
                 FragmentSopaParaguaia sopaParaguaia = new FragmentSopaParaguaia();
                 fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragmentLayoutReceitasSalgadas, sopaParaguaia);
-
+                getSupportActionBar().setTitle(R.string.title_activity_fragment_sopa_paraguaia);
                 fragmentTransaction.commit();
                 break;
             case 2:
                 FragmentTortaDePalmito tortaDePalmito = new FragmentTortaDePalmito();
                 fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragmentLayoutReceitasSalgadas,tortaDePalmito);
-
+                fragmentTransaction.replace(R.id.fragmentLayoutReceitasSalgadas, tortaDePalmito);
+                getSupportActionBar().setTitle(R.string.title_activity_fragment_torta_de_palmito);
                 fragmentTransaction.commit();
                 break;
             case 3:
                 FragmentTortaDePizza tortaDePizza = new FragmentTortaDePizza();
                 fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragmentLayoutReceitasSalgadas,tortaDePizza);
-
+                fragmentTransaction.replace(R.id.fragmentLayoutReceitasSalgadas, tortaDePizza);
+                getSupportActionBar().setTitle(R.string.title_activity_fragment_torta_de_pizza);
                 fragmentTransaction.commit();
                 break;
         }
     }
+
     protected void addDrawerItems() {
         String[] itemsDoNavigationDrawer = {"Inicio", "Receitas Salgadas", "Receitas Doces", "Aperitivos", "Molhos", "Sobre o app"};
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, itemsDoNavigationDrawer);
@@ -89,32 +91,39 @@ public class FragmentLayoutReceitasSalgadas extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent it;
-                switch (position){
+                switch (position) {
                     case 0:
-                        it = new Intent(getApplicationContext(),MainActivity.class);
+                        it = new Intent(getApplicationContext(), MainActivity.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 1:
-                        it = new Intent(getApplicationContext(),ReceitasSalgadas.class);
+                        it = new Intent(getApplicationContext(), ReceitasSalgadas.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 2:
-                        it = new Intent(getApplicationContext(),ReceitasDoces.class);
+                        it = new Intent(getApplicationContext(), ReceitasDoces.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 3:
-                        it = new Intent(getApplicationContext(),Aperitivos.class);
+                        it = new Intent(getApplicationContext(), Aperitivos.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 4:
-                        it = new Intent(getApplicationContext(),Molhos.class);
+                        it = new Intent(getApplicationContext(), Molhos.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 5:
-                        it = new Intent(getApplicationContext(),SobreOApp.class);
+                        it = new Intent(getApplicationContext(), SobreOApp.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
-                }            }
+                }
+            }
         });
 
     }
@@ -177,15 +186,16 @@ public class FragmentLayoutReceitasSalgadas extends AppCompatActivity {
             return true;
         }
 
-        if(actionBarDrawerToggle.onOptionsItemSelected(item)){
+        if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
+
     @Override
     public void onBackPressed() {
-        if (getFragmentManager().getBackStackEntryCount() > 0 ){
+        if (getFragmentManager().getBackStackEntryCount() > 0) {
             getFragmentManager().popBackStack();
         } else {
             super.onBackPressed();

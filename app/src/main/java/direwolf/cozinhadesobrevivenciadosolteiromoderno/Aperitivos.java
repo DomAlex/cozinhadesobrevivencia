@@ -85,26 +85,32 @@ public class Aperitivos extends AppCompatActivity {
                 switch (position) {
                     case 0:
                         it = new Intent(getApplicationContext(), MainActivity.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 1:
                         it = new Intent(getApplicationContext(), ReceitasSalgadas.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 2:
                         it = new Intent(getApplicationContext(), ReceitasDoces.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 3:
                         it = new Intent(getApplicationContext(), Aperitivos.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 4:
                         it = new Intent(getApplicationContext(), Molhos.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 5:
                         it = new Intent(getApplicationContext(), SobreOApp.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                 }

@@ -14,40 +14,40 @@
     <string name="title_activity_sobre_oapp">Sobre o app</string>
 
 
-    <string name="title_activity_receitas_salgadas">Receitas Salgadas</string>
-    <string name="title_activity_receitas_doces">Receitas Doces</string>
+    <string name="title_activity_receitas_salgadas">Receitas salgadas</string>
+    <string name="title_activity_receitas_doces">Receitas doces</string>
     <string name="title_activity_aperitivos">Aperitivos</string>
     <string name="title_activity_molhos">Molhos</string>
     <string name="open_drawer">Navegação aberta</string>
     <string name="close_drawer">Navegação fechada</string>
 
 
-    <string name="title_activity_fragment_layout_receitas_doces">FragmentLayoutReceitasDoces
+    <string name="title_activity_fragment_layout_receitas_doces">Receitas doces
     </string>
 
     <string name="hello_world">Hello world!</string>
-    <string name="title_activity_fragment_layout_receitas_salgadas">FragmentLayoutReceitasSalgadas
+    <string name="title_activity_fragment_layout_receitas_salgadas">Receitas salgadas
     </string>
-    <string name="title_activity_fragment_layout_aperitivos">FragmentLayoutAperitivos</string>
-    <string name="title_activity_fragment_layout_molhos">FragmentLayoutMolhos</string>
-    <string name="title_activity_fragment_sopa_paraguaia">FragmentSopaParaguaia</string>
-    <string name="title_activity_fragment_bolo_de_pao_de_queijo">FragmentBoloDePaoDeQueijo</string>
-    <string name="title_activity_fragment_torta_de_palmito">FragmentTortaDePalmito</string>
-    <string name="title_activity_fragment_torta_de_pizza">FragmentTortaDePizza</string>
-    <string name="title_activity_fragment_bolo_de_caneca">FragmentBoloDeCaneca</string>
-    <string name="title_activity_fragment_bolo_de_leite">FragmentBoloDeLeite</string>
-    <string name="title_activity_fragment_mousse">FragmentMousse</string>
-    <string name="title_activity_fragment_queijadinha">FragmentQueijadinha</string>
-    <string name="title_activity_fragment_torta_de_coco">FragmentTortaDeCoco</string>
-    <string name="title_activity_fragment_molho_americano">FragmentMolhoAmericano</string>
-    <string name="title_activity_fragment_molho_branco">FragmentMolhoBranco</string>
-    <string name="title_activity_fragment_molho_de_tomate">FragmentMolhoDeTomate</string>
-    <string name="title_activity_fragment_pasta_de_atum">FragmentPastaDeAtum</string>
-    <string name="title_activity_fragment_pasta_de_cebola">FragmentPastaDeCebola</string>
-    <string name="title_activity_fragment_pasta_de_galinha">FragmentPastaDeGalinha</string>
-    <string name="title_activity_fragment_pacoca_caseira">FragmentPacocaCaseira</string>
-    <string name="title_activity_fragment_queijo_de_pipoqueiro">FragmentQueijoDePipoqueiro</string>
+    <string name="title_activity_fragment_layout_aperitivos">Aperitivos</string>
+    <string name="title_activity_fragment_layout_molhos">Molhos</string>
+    <string name="title_activity_fragment_sopa_paraguaia">Sopa Paraguaia</string>
+    <string name="title_activity_fragment_bolo_de_pao_de_queijo">Bolo de Pão de Queijo</string>
+    <string name="title_activity_fragment_torta_de_palmito">Torta de Palmito</string>
+    <string name="title_activity_fragment_torta_de_pizza">Torta de Pizza</string>
+    <string name="title_activity_fragment_bolo_de_caneca">Bolo de Caneca</string>
+    <string name="title_activity_fragment_bolo_de_leite">Bolo de Leite</string>
+    <string name="title_activity_fragment_mousse">Mousse</string>
+    <string name="title_activity_fragment_queijadinha">Queijadinha</string>
+    <string name="title_activity_fragment_torta_de_coco">Torta de Côco</string>
+    <string name="title_activity_fragment_molho_americano">Molho Americano</string>
+    <string name="title_activity_fragment_molho_branco">Molho Branco</string>
+    <string name="title_activity_fragment_molho_de_tomate">Molho de Tomate</string>
+    <string name="title_activity_fragment_pasta_de_atum">Pasta de Atum</string>
+    <string name="title_activity_fragment_pasta_de_cebola">Pasta de Cebola</string>
+    <string name="title_activity_fragment_pasta_de_galinha">Pasta de Galinha</string>
+    <string name="title_activity_fragment_pacoca_caseira">Paçoca Caseira</string>
+    <string name="title_activity_fragment_queijo_de_pipoqueiro">Queijo de Pipoqueiro</string>
     <string name="title_activity_fragment_rolinho_empanado_de_frios">
-        FragmentRolinhoEmpanadoDeFrios
+        Rolinho Empanado de Frios
     </string>
 </resources>

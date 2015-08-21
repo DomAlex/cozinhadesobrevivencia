@@ -45,51 +45,52 @@ public class FragmentLayoutReceitasDoces extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Intent intent = getIntent();
-        if(intent != null){
+        if (intent != null) {
             Bundle bundle = intent.getExtras();
-            if(bundle != null){
+            if (bundle != null) {
                 id = bundle.getInt("id");
             }
         }
-        switch (id){
+        switch (id) {
             case 0:
                 FragmentBoloDeCaneca boloDeCaneca = new FragmentBoloDeCaneca();
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragmentLayoutReceitasDoces,boloDeCaneca);
-
+                fragmentTransaction.replace(R.id.fragmentLayoutReceitasDoces, boloDeCaneca);
+                getSupportActionBar().setTitle(R.string.title_activity_fragment_bolo_de_caneca);
                 fragmentTransaction.commit();
                 break;
             case 1:
                 FragmentBoloDeLeite boloDeLeite = new FragmentBoloDeLeite();
                 fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragmentLayoutReceitasDoces, boloDeLeite);
-
+                getSupportActionBar().setTitle(R.string.title_activity_fragment_bolo_de_leite);
                 fragmentTransaction.commit();
                 break;
             case 2:
                 FragmentMousse mousse = new FragmentMousse();
                 fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragmentLayoutReceitasDoces,mousse);
-
+                fragmentTransaction.replace(R.id.fragmentLayoutReceitasDoces, mousse);
+                getSupportActionBar().setTitle(R.string.title_activity_fragment_mousse);
                 fragmentTransaction.commit();
                 break;
             case 3:
                 FragmentQueijadinha queijadinha = new FragmentQueijadinha();
                 fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragmentLayoutReceitasDoces,queijadinha);
-
+                fragmentTransaction.replace(R.id.fragmentLayoutReceitasDoces, queijadinha);
+                getSupportActionBar().setTitle(R.string.title_activity_fragment_queijadinha);
                 fragmentTransaction.commit();
                 break;
             case 4:
                 FragmentTortaDeCoco tortaDeCoco = new FragmentTortaDeCoco();
                 fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragmentLayoutReceitasDoces,tortaDeCoco);
-
+                fragmentTransaction.replace(R.id.fragmentLayoutReceitasDoces, tortaDeCoco);
+                getSupportActionBar().setTitle(R.string.title_activity_fragment_torta_de_coco);
                 fragmentTransaction.commit();
                 break;
         }
 
     }
+
     protected void addDrawerItems() {
         String[] itemsDoNavigationDrawer = {"Inicio", "Receitas Salgadas", "Receitas Doces", "Aperitivos", "Molhos", "Sobre o app"};
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, itemsDoNavigationDrawer);
@@ -98,32 +99,39 @@ public class FragmentLayoutReceitasDoces extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent it;
-                switch (position){
+                switch (position) {
                     case 0:
-                        it = new Intent(getApplicationContext(),MainActivity.class);
+                        it = new Intent(getApplicationContext(), MainActivity.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 1:
-                        it = new Intent(getApplicationContext(),ReceitasSalgadas.class);
+                        it = new Intent(getApplicationContext(), ReceitasSalgadas.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 2:
-                        it = new Intent(getApplicationContext(),ReceitasDoces.class);
+                        it = new Intent(getApplicationContext(), ReceitasDoces.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 3:
-                        it = new Intent(getApplicationContext(),Aperitivos.class);
+                        it = new Intent(getApplicationContext(), Aperitivos.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 4:
-                        it = new Intent(getApplicationContext(),Molhos.class);
+                        it = new Intent(getApplicationContext(), Molhos.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 5:
-                        it = new Intent(getApplicationContext(),SobreOApp.class);
+                        it = new Intent(getApplicationContext(), SobreOApp.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
-                }            }
+                }
+            }
         });
 
     }
@@ -186,7 +194,7 @@ public class FragmentLayoutReceitasDoces extends AppCompatActivity {
             return true;
         }
 
-        if(actionBarDrawerToggle.onOptionsItemSelected(item)){
+        if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
 
@@ -195,7 +203,7 @@ public class FragmentLayoutReceitasDoces extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (getFragmentManager().getBackStackEntryCount() > 0 ){
+        if (getFragmentManager().getBackStackEntryCount() > 0) {
             getFragmentManager().popBackStack();
         } else {
             super.onBackPressed();

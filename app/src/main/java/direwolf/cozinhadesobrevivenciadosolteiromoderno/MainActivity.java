@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        TextView xablau = (TextView)findViewById(R.id.xablau);
+        TextView xablau = (TextView) findViewById(R.id.xablau);
 
 
     }
@@ -66,29 +66,35 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent it;
-                switch (position){
+                switch (position) {
                     case 0:
-                        it = new Intent(getApplicationContext(),MainActivity.class);
+                        it = new Intent(getApplicationContext(), MainActivity.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 1:
-                        it = new Intent(getApplicationContext(),ReceitasSalgadas.class);
+                        it = new Intent(getApplicationContext(), ReceitasSalgadas.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 2:
-                        it = new Intent(getApplicationContext(),ReceitasDoces.class);
+                        it = new Intent(getApplicationContext(), ReceitasDoces.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 3:
-                        it = new Intent(getApplicationContext(),Aperitivos.class);
+                        it = new Intent(getApplicationContext(), Aperitivos.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 4:
-                        it = new Intent(getApplicationContext(),Molhos.class);
+                        it = new Intent(getApplicationContext(), Molhos.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 5:
-                        it = new Intent(getApplicationContext(),SobreOApp.class);
+                        it = new Intent(getApplicationContext(), SobreOApp.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                 }
@@ -137,7 +143,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -156,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
 
-        if(actionBarDrawerToggle.onOptionsItemSelected(item)){
+        if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
 

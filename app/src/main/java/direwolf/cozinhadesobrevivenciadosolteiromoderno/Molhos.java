@@ -39,15 +39,12 @@ public class Molhos extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-
-
-
         ListView listaDeMolhosEPastas;
-        String[] receitasDeMolhos = {"Molho Branco","Molho de Tomate", "Pasta de cebola", "Molho Americano","Pasta de Galinha","Pasta de Atum"};
+        String[] receitasDeMolhos = {"Molho Branco", "Molho de Tomate", "Pasta de cebola", "Molho Americano", "Pasta de Galinha", "Pasta de Atum"};
         ArrayAdapter<String> molhosAdapter;
 
-        molhosAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,receitasDeMolhos);
-        listaDeMolhosEPastas = (ListView)findViewById(R.id.listViewMolhosEpastas);
+        molhosAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, receitasDeMolhos);
+        listaDeMolhosEPastas = (ListView) findViewById(R.id.listViewMolhosEpastas);
         listaDeMolhosEPastas.setAdapter(molhosAdapter);
 
         listaDeMolhosEPastas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -55,39 +52,39 @@ public class Molhos extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent it;
                 Bundle bundle = new Bundle();
-                switch (position){
+                switch (position) {
                     case 0:
-                        it = new Intent(getApplicationContext(),FragmentLayoutMolhos.class);
-                        bundle.putInt("id",0);
+                        it = new Intent(getApplicationContext(), FragmentLayoutMolhos.class);
+                        bundle.putInt("id", 0);
                         it.putExtras(bundle);
                         startActivity(it);
                         break;
                     case 1:
-                        it = new Intent(getApplicationContext(),FragmentLayoutMolhos.class);
+                        it = new Intent(getApplicationContext(), FragmentLayoutMolhos.class);
                         bundle.putInt("id", 1);
                         it.putExtras(bundle);
                         startActivity(it);
                         break;
                     case 2:
-                        it = new Intent(getApplicationContext(),FragmentLayoutMolhos.class);
+                        it = new Intent(getApplicationContext(), FragmentLayoutMolhos.class);
                         bundle.putInt("id", 2);
                         it.putExtras(bundle);
                         startActivity(it);
                         break;
                     case 3:
-                        it = new Intent(getApplicationContext(),FragmentLayoutMolhos.class);
+                        it = new Intent(getApplicationContext(), FragmentLayoutMolhos.class);
                         bundle.putInt("id", 3);
                         it.putExtras(bundle);
                         startActivity(it);
                         break;
                     case 4:
-                        it = new Intent(getApplicationContext(),FragmentLayoutMolhos.class);
+                        it = new Intent(getApplicationContext(), FragmentLayoutMolhos.class);
                         bundle.putInt("id", 4);
                         it.putExtras(bundle);
                         startActivity(it);
                         break;
                     case 5:
-                        it = new Intent(getApplicationContext(),FragmentLayoutMolhos.class);
+                        it = new Intent(getApplicationContext(), FragmentLayoutMolhos.class);
                         bundle.putInt("id", 5);
                         it.putExtras(bundle);
                         startActivity(it);
@@ -107,29 +104,35 @@ public class Molhos extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent it;
-                switch (position){
+                switch (position) {
                     case 0:
-                        it = new Intent(getApplicationContext(),MainActivity.class);
+                        it = new Intent(getApplicationContext(), MainActivity.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 1:
-                        it = new Intent(getApplicationContext(),ReceitasSalgadas.class);
+                        it = new Intent(getApplicationContext(), ReceitasSalgadas.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 2:
-                        it = new Intent(getApplicationContext(),ReceitasDoces.class);
+                        it = new Intent(getApplicationContext(), ReceitasDoces.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 3:
-                        it = new Intent(getApplicationContext(),Aperitivos.class);
+                        it = new Intent(getApplicationContext(), Aperitivos.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 4:
-                        it = new Intent(getApplicationContext(),Molhos.class);
+                        it = new Intent(getApplicationContext(), Molhos.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 5:
-                        it = new Intent(getApplicationContext(),SobreOApp.class);
+                        it = new Intent(getApplicationContext(), SobreOApp.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                 }
@@ -198,7 +201,7 @@ public class Molhos extends AppCompatActivity {
         }
 
 
-        if(actionBarDrawerToggle.onOptionsItemSelected(item)){
+        if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
 

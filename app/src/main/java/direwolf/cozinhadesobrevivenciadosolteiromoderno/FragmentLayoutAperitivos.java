@@ -57,21 +57,21 @@ public class
                 FragmentPacocaCaseira pacocaCaseira = new FragmentPacocaCaseira();
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragmentLayoutAperitivos, pacocaCaseira);
-
+                getSupportActionBar().setTitle(R.string.title_activity_fragment_pacoca_caseira);
                 fragmentTransaction.commit();
                 break;
             case 1:
                 FragmentQueijoDePipoqueiro queijoDePipoqueiro = new FragmentQueijoDePipoqueiro();
                 fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragmentLayoutAperitivos, queijoDePipoqueiro);
-
+                getSupportActionBar().setTitle(R.string.title_activity_fragment_queijo_de_pipoqueiro);
                 fragmentTransaction.commit();
                 break;
             case 2:
                 FragmentRolinhoEmpanadoDeFrios rolinhoEmpanadoDeFrios = new FragmentRolinhoEmpanadoDeFrios();
                 fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragmentLayoutAperitivos, rolinhoEmpanadoDeFrios);
-
+                getSupportActionBar().setTitle(R.string.title_activity_fragment_rolinho_empanado_de_frios);
                 fragmentTransaction.commit();
                 break;
         }
@@ -87,26 +87,32 @@ public class
                 switch (position) {
                     case 0:
                         it = new Intent(getApplicationContext(), MainActivity.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 1:
                         it = new Intent(getApplicationContext(), ReceitasSalgadas.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 2:
                         it = new Intent(getApplicationContext(), ReceitasDoces.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 3:
                         it = new Intent(getApplicationContext(), Aperitivos.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 4:
                         it = new Intent(getApplicationContext(), Molhos.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 5:
                         it = new Intent(getApplicationContext(), SobreOApp.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                 }
@@ -185,6 +191,7 @@ public class
         if (getFragmentManager().getBackStackEntryCount() > 0 ){
             getFragmentManager().popBackStack();
         } else {
+
             super.onBackPressed();
         }
     }

@@ -30,6 +30,7 @@ public class FragmentLayoutMolhos extends AppCompatActivity {
     private ListView drawerList;
     private String tituloDaActivity;
     private int id;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,58 +47,59 @@ public class FragmentLayoutMolhos extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Intent intent = getIntent();
-        if(intent != null){
+        if (intent != null) {
             Bundle bundle = intent.getExtras();
-            if(bundle != null){
+            if (bundle != null) {
                 id = bundle.getInt("id");
             }
         }
-        switch (id){
+        switch (id) {
             case 0:
                 FragmentMolhoBranco molhoBranco = new FragmentMolhoBranco();
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragmentLayoutMolhos,molhoBranco);
-
+                fragmentTransaction.replace(R.id.fragmentLayoutMolhos, molhoBranco);
+                getSupportActionBar().setTitle(R.string.title_activity_fragment_molho_branco);
                 fragmentTransaction.commit();
                 break;
             case 1:
                 FragmentMolhoDeTomate molhoDeTomate = new FragmentMolhoDeTomate();
                 fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragmentLayoutMolhos, molhoDeTomate);
-
+                getSupportActionBar().setTitle(R.string.title_activity_fragment_molho_de_tomate);
                 fragmentTransaction.commit();
                 break;
             case 2:
                 FragmentPastaDeCebola pastaDeCebola = new FragmentPastaDeCebola();
                 fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragmentLayoutMolhos,pastaDeCebola);
-
+                fragmentTransaction.replace(R.id.fragmentLayoutMolhos, pastaDeCebola);
+                getSupportActionBar().setTitle(R.string.title_activity_fragment_pasta_de_cebola);
                 fragmentTransaction.commit();
                 break;
             case 3:
                 FragmentMolhoAmericano molhoAmericano = new FragmentMolhoAmericano();
                 fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragmentLayoutMolhos,molhoAmericano);
-
+                fragmentTransaction.replace(R.id.fragmentLayoutMolhos, molhoAmericano);
+                getSupportActionBar().setTitle(R.string.title_activity_fragment_molho_americano);
                 fragmentTransaction.commit();
                 break;
             case 4:
                 FragmentPastaDeGalinha pastaDeGalinha = new FragmentPastaDeGalinha();
                 fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragmentLayoutMolhos,pastaDeGalinha);
-
+                fragmentTransaction.replace(R.id.fragmentLayoutMolhos, pastaDeGalinha);
+                getSupportActionBar().setTitle(R.string.title_activity_fragment_pasta_de_galinha);
                 fragmentTransaction.commit();
                 break;
             case 5:
                 FragmentPastaDeAtum pastaDeAtum = new FragmentPastaDeAtum();
                 fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragmentLayoutMolhos,pastaDeAtum);
-
+                fragmentTransaction.replace(R.id.fragmentLayoutMolhos, pastaDeAtum);
+                getSupportActionBar().setTitle(R.string.title_activity_fragment_pasta_de_atum);
                 fragmentTransaction.commit();
                 break;
         }
 
     }
+
     protected void addDrawerItems() {
         String[] itemsDoNavigationDrawer = {"Inicio", "Receitas Salgadas", "Receitas Doces", "Aperitivos", "Molhos", "Sobre o app"};
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, itemsDoNavigationDrawer);
@@ -106,32 +108,39 @@ public class FragmentLayoutMolhos extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent it;
-                switch (position){
+                switch (position) {
                     case 0:
-                        it = new Intent(getApplicationContext(),MainActivity.class);
+                        it = new Intent(getApplicationContext(), MainActivity.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 1:
-                        it = new Intent(getApplicationContext(),ReceitasSalgadas.class);
+                        it = new Intent(getApplicationContext(), ReceitasSalgadas.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 2:
-                        it = new Intent(getApplicationContext(),ReceitasDoces.class);
+                        it = new Intent(getApplicationContext(), ReceitasDoces.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 3:
-                        it = new Intent(getApplicationContext(),Aperitivos.class);
+                        it = new Intent(getApplicationContext(), Aperitivos.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 4:
-                        it = new Intent(getApplicationContext(),Molhos.class);
+                        it = new Intent(getApplicationContext(), Molhos.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
                     case 5:
-                        it = new Intent(getApplicationContext(),SobreOApp.class);
+                        it = new Intent(getApplicationContext(), SobreOApp.class);
+                        drawerLayout.closeDrawer(drawerList);
                         startActivity(it);
                         break;
-                }            }
+                }
+            }
         });
 
     }
@@ -194,7 +203,7 @@ public class FragmentLayoutMolhos extends AppCompatActivity {
             return true;
         }
 
-        if(actionBarDrawerToggle.onOptionsItemSelected(item)){
+        if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
 
@@ -203,7 +212,7 @@ public class FragmentLayoutMolhos extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (getFragmentManager().getBackStackEntryCount() > 0 ){
+        if (getFragmentManager().getBackStackEntryCount() > 0) {
             getFragmentManager().popBackStack();
         } else {
             super.onBackPressed();
